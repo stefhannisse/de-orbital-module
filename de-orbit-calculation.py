@@ -182,11 +182,11 @@ v = v_init
 t_solved = one_sim(z, r, t, dt, A_needed/increase_factor, Cd, mass, angle, v, r_E)
 t_solved_years = t_solved/(3600*24*365.25)
 
-print("Uninflated time is: "+str(t_solved_years)+" years.")
+print("Inflated time is: "+str(t_solved_years)+" years.")
 
 print("Area for the sail needed is: "+str(A_needed)+" m^2.")
 
-print("Which corresponds to the sides being {} cm long.".format(math.sqrt(A_needed)))
+print("Which corresponds to the sides being {} m long.".format(math.sqrt(A_needed)))
 
 inflatesail_boom_area = 0.006361725
 Boom_area_decrease_factor = 4
