@@ -11,3 +11,4 @@ bl = b1 / math.cos(beam_angle * (math.pi / 180))
 bl = bl - 0.04
 
 print('The beam length must be {} meters'.format(bl))
+
