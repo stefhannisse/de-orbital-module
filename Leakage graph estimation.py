@@ -32,8 +32,8 @@ tau_space = (n*R*T) / (p_in * A * math.sqrt((2/rho)*(p_in - ambient_pressure_spa
 Loop = True
 
 while Loop == True:
-    print('calculating for t is {}'.format(t))
-    p = p_in*np.exp(-(t/tau))
+    p = p_in*np.exp(((-t*p_in*A) / (n*R*T)) * math.sqrt((2/rho)*(p_in - ambient_pressure)))
+    print('pressure for t is {}'.format(p))
     #print(delta_p)
     t_list.append(t)
     delta_p_list.append(p)

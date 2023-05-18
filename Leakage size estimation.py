@@ -1,5 +1,6 @@
 import math
 from numpy import log as ln
+import matplotlib.pyplot as plt
 
 time_values = []
 y_values = []
@@ -38,6 +39,8 @@ if len(time_values) != len(pressure_values):
     exit()
 
 total_leakage = 0
+leakage_rates = []
+
 for index in range(len(time_values)):
     time_value = float(time_values[index]) + ambient_pressure
     pressure_value = float(pressure_values[index]) + ambient_pressure
@@ -49,8 +52,19 @@ for index in range(len(time_values)):
 
     # Calculate the leakage area
     leakage_rate = (n*R*T / tau) / (pin * math.sqrt((2/rho) * (pin - ambient_pressure)))
+    leakage_rates.append(leakage_rate)
     total_leakage += leakage_rate
     print('Leakage rate for index {} is {}'.format(index, leakage_rate))
 
 print('Average leakage rate is {} m2'.format(total_leakage / len(time_values)))
-#5.917925927471826e-10
+
+plt.plot(time_values, pressure_values)
+plt.xlabel('Time (seconds)')
+plt.ylabel('Air pressure (kPa)')
+plt.show()
+
+plt.scatter(time_values, leakage_rates, marker="x")
+plt.plot(time_values, [total_leakage / len(time_values)] * len(time_values))
+plt.xlabel('Time (seconds)')
+plt.ylabel('Leakage hole (m2)')
+plt.show()
