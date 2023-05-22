@@ -13,7 +13,9 @@ T = 300  # Temperature
 n = 0.3863  # amount of particles
 R = 8.1345  # Ideal gas constant
 delta_p_0 = pin-ambient_pressure
-rho = pin/(R*T)
+rho = (pin)/(R*T)
+#rho = 1.22
+print('rho: {}'.format(rho))
 
 with open('leaking_values.txt', 'r') as f:
     for line in f.readlines():
@@ -42,16 +44,19 @@ total_leakage = 0
 leakage_rates = []
 
 for index in range(len(time_values)):
-    time_value = float(time_values[index]) + ambient_pressure
+    time_value = float(time_values[index])
     pressure_value = float(pressure_values[index]) + ambient_pressure
+
+    print('time value: {}, pressure value: {}'.format(time_value, pressure_value))
 
     # Calculate tau first
     #tau = time_value / (-ln(pin / pressure_value))
-    tau = time_value / (-ln(pressure_value / pin))
+    tau = -time_value / (ln((pressure_value - ambient_pressure) / (pin - ambient_pressure)))
     print('tau is: {}'.format(tau))
 
     # Calculate the leakage area
-    leakage_rate = (n*R*T / tau) / (pin * math.sqrt((2/rho) * (pin - ambient_pressure)))
+    #leakage_rate = (n*R*T / tau) / (pin * math.sqrt((2/rho) * (pin - ambient_pressure)))
+    leakage_rate = ((n * R * T) / (pin ** 2 * tau)) * (pin - ambient_pressure) / (math.sqrt((2 / rho) * (pin - ambient_pressure)))
     leakage_rates.append(leakage_rate)
     total_leakage += leakage_rate
     print('Leakage rate for index {} is {}'.format(index, leakage_rate))
