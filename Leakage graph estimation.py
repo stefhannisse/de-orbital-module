@@ -18,7 +18,7 @@ R = 8.1345
 rho = p_in/(R*T)
 #rho = 1.22
 #A = float(input("Enter the area of the leakage hole: "))
-A = 1.10275015910772e-06
+A = 1.1507593680620897e-06
 t0 = 0
 t = t0
 dt = 10
@@ -39,7 +39,7 @@ while Loop == True:
     #print('pressure for t is {}'.format(p))
     #print(delta_p)
     t_list.append(t)
-    delta_p_list.append(p)
+    delta_p_list.append(p - ambient_pressure)
     t = t + dt
 
     if p < (1000 + ambient_pressure):
