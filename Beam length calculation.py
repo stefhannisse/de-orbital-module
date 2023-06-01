@@ -1,7 +1,7 @@
 import math
 
 sail_side_length = 0.45 #The length of the sail sides in meters
-beam_angle = 30 #Angle in degrees for the inflated beam
+beam_angle = 35 #Angle in degrees for the inflated beam
 
 b1 = (sail_side_length / 2) / math.sin(45 * (math.pi / 180))
 
