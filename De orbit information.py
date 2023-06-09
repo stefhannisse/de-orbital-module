@@ -350,52 +350,52 @@ plt.show()
 
 #Orbital eccentricity graph
 #
-# plt.plot(t_list_days[1:], e_list)
-# plt.xlabel("Time (Days)")
-# plt.ylabel("Eccentricity (-)")
-# plt.grid()
-# plt.show()
+plt.plot(t_list_days[1:], e_list)
+plt.xlabel("Time (Days)")
+plt.ylabel("Eccentricity (-)")
+plt.grid()
+plt.show()
 #
 # #altitude decay rate graph
 #
-# plt.plot(t_list_days_unit, z_diff_list)
-# plt.xlabel("Time (Days)")
-# plt.ylabel("Decay Rate (km/day)")
-# plt.grid()
-# plt.show()
+plt.plot(t_list_days_unit, z_diff_list)
+plt.xlabel("Time (Days)")
+plt.ylabel("Decay Rate (km/day)")
+plt.grid()
+plt.show()
 #
 # #Orbital angle graph
 #
-# plt.plot(t_list_days, angle_list)
-# plt.xlabel("Time (Days)")
-# plt.ylabel("Angle (rad)")
-# plt.grid()
-# plt.show()
+plt.plot(t_list_days, angle_list)
+plt.xlabel("Time (Days)")
+plt.ylabel("Angle (rad)")
+plt.grid()
+plt.show()
 #
 # #TIme period to make a full orbit graph
 #
-# plt.plot(t_list_days[1:], P_list)
-# plt.xlabel("Time (Days)")
-# plt.ylabel("Orbital Period (Hours)")
-# plt.grid()
-# plt.show()
+plt.plot(t_list_days[1:], P_list)
+plt.xlabel("Time (Days)")
+plt.ylabel("Orbital Period (Hours)")
+plt.grid()
+plt.show()
 #
 # #2d orbit graph
 #
-# plt.plot(xlist, ylist)
-# plt.plot(circ_x, circ_y)
-# plt.xlabel("")
-# plt.ylabel("")
-# plt.grid()
-# plt.show()
+plt.plot(xlist, ylist)
+plt.plot(circ_x, circ_y)
+plt.xlabel("")
+plt.ylabel("")
+plt.grid()
+plt.show()
 #
 # #2d altitude orit graph
 #
-# plt.plot(xzlist, yzlist)
-# plt.xlabel("")
-# plt.ylabel("")
-# plt.grid()
-# plt.show()
+plt.plot(xzlist, yzlist)
+plt.xlabel("")
+plt.ylabel("")
+plt.grid()
+plt.show()
 #
 # #velocity of the satellite graph
 #

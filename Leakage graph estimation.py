@@ -19,10 +19,10 @@ R = 8.1345
 rho = p_in/(R*T)
 #rho = 1.22
 #A = float(input("Enter the area of the leakage hole: "))
-A = 1.1507593680620897e-06
+A = 1.6587619393101267e-06
 t0 = 0
 t = t0
-dt = 10
+dt = 1
 
 delta_p_0 = p_in-ambient_pressure
 delta_p_0_2 = p_in - 0

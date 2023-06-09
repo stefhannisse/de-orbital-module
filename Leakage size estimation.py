@@ -62,6 +62,7 @@ for index in range(len(time_values)):
     print('Leakage rate for index {} is {}'.format(index, leakage_rate))
 
 print('Average leakage rate is {} m2'.format(total_leakage / len(time_values)))
+print('Median leakage rate: {}'.format(leakage_rates[int(len(leakage_rates) / 2)]))
 
 plt.plot(time_values, pressure_values)
 plt.xlabel('Time (seconds)')

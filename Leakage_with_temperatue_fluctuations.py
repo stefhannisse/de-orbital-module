@@ -55,7 +55,7 @@ if __name__ == '__main__':
         #2*pi*r
 
         #Calculate the circumference of the orbit
-        if(t < ((95.13 * 60) / 2)):
+        if t < ((95.13 * 60) / 2):
             T_current = convertCtoKelvin(125) - ((speed_orbit * t / (circumference_orbit / 2)) * 190)
         else:
             # = 208.15 +
